@@ -4,6 +4,12 @@
 package com.ethan.generator;
 
 
+import com.ethan.generator.tables.Author;
+import com.ethan.generator.tables.Book;
+import com.ethan.generator.tables.BookStore;
+import com.ethan.generator.tables.BookToBookStore;
+import com.ethan.generator.tables.Department;
+import com.ethan.generator.tables.Language;
 import com.ethan.generator.tables.User;
 
 import java.util.ArrayList;
@@ -30,12 +36,42 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Jooq extends SchemaImpl {
 
-    private static final long serialVersionUID = -1268240968;
+    private static final long serialVersionUID = -608605076;
 
     /**
      * The reference instance of <code>jooq</code>
      */
     public static final Jooq JOOQ = new Jooq();
+
+    /**
+     * The table <code>jooq.author</code>.
+     */
+    public final Author AUTHOR = com.ethan.generator.tables.Author.AUTHOR;
+
+    /**
+     * The table <code>jooq.book</code>.
+     */
+    public final Book BOOK = com.ethan.generator.tables.Book.BOOK;
+
+    /**
+     * The table <code>jooq.book_store</code>.
+     */
+    public final BookStore BOOK_STORE = com.ethan.generator.tables.BookStore.BOOK_STORE;
+
+    /**
+     * The table <code>jooq.book_to_book_store</code>.
+     */
+    public final BookToBookStore BOOK_TO_BOOK_STORE = com.ethan.generator.tables.BookToBookStore.BOOK_TO_BOOK_STORE;
+
+    /**
+     * The table <code>jooq.language</code>.
+     */
+    public final Language LANGUAGE = com.ethan.generator.tables.Language.LANGUAGE;
+
+    /**
+     * The table <code>jooq.t_department</code>.
+     */
+    public final Department T_DEPARTMENT = com.ethan.generator.tables.Department.T_DEPARTMENT;
 
     /**
      * The table <code>jooq.user</code>.
@@ -67,6 +103,12 @@ public class Jooq extends SchemaImpl {
 
     private final List<Table<?>> getTables0() {
         return Arrays.<Table<?>>asList(
+            Author.AUTHOR,
+            Book.BOOK,
+            BookStore.BOOK_STORE,
+            BookToBookStore.BOOK_TO_BOOK_STORE,
+            Language.LANGUAGE,
+            Department.T_DEPARTMENT,
             User.USER);
     }
 }

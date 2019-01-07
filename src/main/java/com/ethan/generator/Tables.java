@@ -4,6 +4,12 @@
 package com.ethan.generator;
 
 
+import com.ethan.generator.tables.Author;
+import com.ethan.generator.tables.Book;
+import com.ethan.generator.tables.BookStore;
+import com.ethan.generator.tables.BookToBookStore;
+import com.ethan.generator.tables.Department;
+import com.ethan.generator.tables.Language;
 import com.ethan.generator.tables.User;
 
 import javax.annotation.Generated;
@@ -21,6 +27,36 @@ import javax.annotation.Generated;
 )
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
+
+    /**
+     * The table <code>jooq.author</code>.
+     */
+    public static final Author AUTHOR = com.ethan.generator.tables.Author.AUTHOR;
+
+    /**
+     * The table <code>jooq.book</code>.
+     */
+    public static final Book BOOK = com.ethan.generator.tables.Book.BOOK;
+
+    /**
+     * The table <code>jooq.book_store</code>.
+     */
+    public static final BookStore BOOK_STORE = com.ethan.generator.tables.BookStore.BOOK_STORE;
+
+    /**
+     * The table <code>jooq.book_to_book_store</code>.
+     */
+    public static final BookToBookStore BOOK_TO_BOOK_STORE = com.ethan.generator.tables.BookToBookStore.BOOK_TO_BOOK_STORE;
+
+    /**
+     * The table <code>jooq.language</code>.
+     */
+    public static final Language LANGUAGE = com.ethan.generator.tables.Language.LANGUAGE;
+
+    /**
+     * The table <code>jooq.t_department</code>.
+     */
+    public static final Department T_DEPARTMENT = com.ethan.generator.tables.Department.T_DEPARTMENT;
 
     /**
      * The table <code>jooq.user</code>.

@@ -1,5 +1,6 @@
 package com.ethan;
 
+import com.ethan.entity.param.UserParam;
 import com.ethan.generator.tables.pojos.User;
 import com.ethan.service.UserService;
 import org.junit.Test;
@@ -27,12 +28,16 @@ public class DemoJooqApplicationTests {
     @Test
     public void addUser(){
 
-        User user = new User();
-        user.setName("张三2");
+//        User user = new User();
+//        user.setId((long)7);
+//        user.setName("下棋3");
+//        user.setPhone("12345678901");
+//        user.setCreateAt(LocalDateTime.now());
+//        userService.insertUser(user);
+        UserParam user = new UserParam();
+        user.setName("下棋vvvvv");
         user.setPhone("12345678901");
-        user.setCreateAt(LocalDateTime.now());
-        userService.insertUser(user);
-
+        userService.storeUser(user);
 
     }
 
@@ -41,8 +46,9 @@ public class DemoJooqApplicationTests {
     @Test
     public void  query(){
 
-        userService.queryAll().stream().forEach(user -> System.out.println(user.toString()));
-
+        //userService.queryAll().stream().forEach(user -> System.out.println(user.toString()));
+        User user = userService.getById((long)1);
+        System.out.println(user.toString());
     }
 
 

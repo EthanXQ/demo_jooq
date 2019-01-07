@@ -9,6 +9,9 @@
     <generator>
         <!-- 代码生成器 -->
         <name>org.jooq.codegen.JavaGenerator</name>
+        <strategy>
+            <name>com.ethan.stratege.MyStratege</name>
+        </strategy>
         <database>
             <!--下面这两行是为view也生成代码的关键-->
             <!--force generating id'sfor everything in public schema, that has an 'id' field-->
@@ -34,7 +37,7 @@
             <javaTimeTypes>true</javaTimeTypes>
             <!--<interfaces>true</interfaces>-->
             <!--不在生成的代码中添加spring注释，比如@Repository-->
-            <springAnnotations>false</springAnnotations>
+            <springAnnotations>true</springAnnotations>
         </generate>
 
         <target>

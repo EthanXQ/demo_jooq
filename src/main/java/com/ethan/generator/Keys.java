@@ -4,7 +4,19 @@
 package com.ethan.generator;
 
 
+import com.ethan.generator.tables.Author;
+import com.ethan.generator.tables.Book;
+import com.ethan.generator.tables.BookStore;
+import com.ethan.generator.tables.BookToBookStore;
+import com.ethan.generator.tables.Department;
+import com.ethan.generator.tables.Language;
 import com.ethan.generator.tables.User;
+import com.ethan.generator.tables.records.AuthorRecord;
+import com.ethan.generator.tables.records.BookRecord;
+import com.ethan.generator.tables.records.BookStoreRecord;
+import com.ethan.generator.tables.records.BookToBookStoreRecord;
+import com.ethan.generator.tables.records.DepartmentRecord;
+import com.ethan.generator.tables.records.LanguageRecord;
 import com.ethan.generator.tables.records.UserRecord;
 
 import javax.annotation.Generated;
@@ -32,12 +44,19 @@ public class Keys {
     // IDENTITY definitions
     // -------------------------------------------------------------------------
 
+    public static final Identity<DepartmentRecord, Long> IDENTITY_T_DEPARTMENT = Identities0.IDENTITY_T_DEPARTMENT;
     public static final Identity<UserRecord, Long> IDENTITY_USER = Identities0.IDENTITY_USER;
 
     // -------------------------------------------------------------------------
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
+    public static final UniqueKey<AuthorRecord> KEY_AUTHOR_PRIMARY = UniqueKeys0.KEY_AUTHOR_PRIMARY;
+    public static final UniqueKey<BookRecord> KEY_BOOK_PRIMARY = UniqueKeys0.KEY_BOOK_PRIMARY;
+    public static final UniqueKey<BookStoreRecord> KEY_BOOK_STORE_NAME = UniqueKeys0.KEY_BOOK_STORE_NAME;
+    public static final UniqueKey<BookToBookStoreRecord> KEY_BOOK_TO_BOOK_STORE_PRIMARY = UniqueKeys0.KEY_BOOK_TO_BOOK_STORE_PRIMARY;
+    public static final UniqueKey<LanguageRecord> KEY_LANGUAGE_PRIMARY = UniqueKeys0.KEY_LANGUAGE_PRIMARY;
+    public static final UniqueKey<DepartmentRecord> KEY_T_DEPARTMENT_PRIMARY = UniqueKeys0.KEY_T_DEPARTMENT_PRIMARY;
     public static final UniqueKey<UserRecord> KEY_USER_PRIMARY = UniqueKeys0.KEY_USER_PRIMARY;
 
     // -------------------------------------------------------------------------
@@ -50,10 +69,17 @@ public class Keys {
     // -------------------------------------------------------------------------
 
     private static class Identities0 {
+        public static Identity<DepartmentRecord, Long> IDENTITY_T_DEPARTMENT = Internal.createIdentity(Department.T_DEPARTMENT, Department.T_DEPARTMENT.ID);
         public static Identity<UserRecord, Long> IDENTITY_USER = Internal.createIdentity(User.USER, User.USER.ID);
     }
 
     private static class UniqueKeys0 {
+        public static final UniqueKey<AuthorRecord> KEY_AUTHOR_PRIMARY = Internal.createUniqueKey(Author.AUTHOR, "KEY_author_PRIMARY", Author.AUTHOR.ID);
+        public static final UniqueKey<BookRecord> KEY_BOOK_PRIMARY = Internal.createUniqueKey(Book.BOOK, "KEY_book_PRIMARY", Book.BOOK.ID);
+        public static final UniqueKey<BookStoreRecord> KEY_BOOK_STORE_NAME = Internal.createUniqueKey(BookStore.BOOK_STORE, "KEY_book_store_name", BookStore.BOOK_STORE.NAME);
+        public static final UniqueKey<BookToBookStoreRecord> KEY_BOOK_TO_BOOK_STORE_PRIMARY = Internal.createUniqueKey(BookToBookStore.BOOK_TO_BOOK_STORE, "KEY_book_to_book_store_PRIMARY", BookToBookStore.BOOK_TO_BOOK_STORE.NAME, BookToBookStore.BOOK_TO_BOOK_STORE.BOOK_ID);
+        public static final UniqueKey<LanguageRecord> KEY_LANGUAGE_PRIMARY = Internal.createUniqueKey(Language.LANGUAGE, "KEY_language_PRIMARY", Language.LANGUAGE.ID);
+        public static final UniqueKey<DepartmentRecord> KEY_T_DEPARTMENT_PRIMARY = Internal.createUniqueKey(Department.T_DEPARTMENT, "KEY_t_department_PRIMARY", Department.T_DEPARTMENT.ID);
         public static final UniqueKey<UserRecord> KEY_USER_PRIMARY = Internal.createUniqueKey(User.USER, "KEY_user_PRIMARY", User.USER.ID);
     }
 }

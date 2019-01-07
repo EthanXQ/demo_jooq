@@ -4,6 +4,12 @@
 package com.ethan.generator;
 
 
+import com.ethan.generator.tables.Author;
+import com.ethan.generator.tables.Book;
+import com.ethan.generator.tables.BookStore;
+import com.ethan.generator.tables.BookToBookStore;
+import com.ethan.generator.tables.Department;
+import com.ethan.generator.tables.Language;
 import com.ethan.generator.tables.User;
 
 import javax.annotation.Generated;
@@ -30,6 +36,15 @@ public class Indexes {
     // INDEX definitions
     // -------------------------------------------------------------------------
 
+    public static final Index AUTHOR_PRIMARY = Indexes0.AUTHOR_PRIMARY;
+    public static final Index BOOK_FK_BOOK_AUTHOR = Indexes0.BOOK_FK_BOOK_AUTHOR;
+    public static final Index BOOK_FK_BOOK_LANGUAGE = Indexes0.BOOK_FK_BOOK_LANGUAGE;
+    public static final Index BOOK_PRIMARY = Indexes0.BOOK_PRIMARY;
+    public static final Index BOOK_STORE_NAME = Indexes0.BOOK_STORE_NAME;
+    public static final Index BOOK_TO_BOOK_STORE_FK_B2BS_BOOK = Indexes0.BOOK_TO_BOOK_STORE_FK_B2BS_BOOK;
+    public static final Index BOOK_TO_BOOK_STORE_PRIMARY = Indexes0.BOOK_TO_BOOK_STORE_PRIMARY;
+    public static final Index LANGUAGE_PRIMARY = Indexes0.LANGUAGE_PRIMARY;
+    public static final Index T_DEPARTMENT_PRIMARY = Indexes0.T_DEPARTMENT_PRIMARY;
     public static final Index USER_PRIMARY = Indexes0.USER_PRIMARY;
 
     // -------------------------------------------------------------------------
@@ -37,6 +52,15 @@ public class Indexes {
     // -------------------------------------------------------------------------
 
     private static class Indexes0 {
+        public static Index AUTHOR_PRIMARY = Internal.createIndex("PRIMARY", Author.AUTHOR, new OrderField[] { Author.AUTHOR.ID }, true);
+        public static Index BOOK_FK_BOOK_AUTHOR = Internal.createIndex("fk_book_author", Book.BOOK, new OrderField[] { Book.BOOK.AUTHOR_ID }, false);
+        public static Index BOOK_FK_BOOK_LANGUAGE = Internal.createIndex("fk_book_language", Book.BOOK, new OrderField[] { Book.BOOK.LANGUAGE_ID }, false);
+        public static Index BOOK_PRIMARY = Internal.createIndex("PRIMARY", Book.BOOK, new OrderField[] { Book.BOOK.ID }, true);
+        public static Index BOOK_STORE_NAME = Internal.createIndex("name", BookStore.BOOK_STORE, new OrderField[] { BookStore.BOOK_STORE.NAME }, true);
+        public static Index BOOK_TO_BOOK_STORE_FK_B2BS_BOOK = Internal.createIndex("fk_b2bs_book", BookToBookStore.BOOK_TO_BOOK_STORE, new OrderField[] { BookToBookStore.BOOK_TO_BOOK_STORE.BOOK_ID }, false);
+        public static Index BOOK_TO_BOOK_STORE_PRIMARY = Internal.createIndex("PRIMARY", BookToBookStore.BOOK_TO_BOOK_STORE, new OrderField[] { BookToBookStore.BOOK_TO_BOOK_STORE.NAME, BookToBookStore.BOOK_TO_BOOK_STORE.BOOK_ID }, true);
+        public static Index LANGUAGE_PRIMARY = Internal.createIndex("PRIMARY", Language.LANGUAGE, new OrderField[] { Language.LANGUAGE.ID }, true);
+        public static Index T_DEPARTMENT_PRIMARY = Internal.createIndex("PRIMARY", Department.T_DEPARTMENT, new OrderField[] { Department.T_DEPARTMENT.ID }, true);
         public static Index USER_PRIMARY = Internal.createIndex("PRIMARY", User.USER, new OrderField[] { User.USER.ID }, true);
     }
 }

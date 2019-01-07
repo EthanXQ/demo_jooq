@@ -1,6 +1,5 @@
 package com.ethan;
 
-import org.jooq.codegen.GeneratorStrategy;
 import org.jooq.tools.StringUtils;
 
 /**
@@ -10,7 +9,7 @@ import org.jooq.tools.StringUtils;
  */
 public class StrategeTest {
 
-    private static String tablePrefix = "tb_";
+    private static String tablePrefix = "t_";
 
     public String getTablePrefix() {
         return tablePrefix;
@@ -30,7 +29,7 @@ public class StrategeTest {
 
         StringBuilder result = new StringBuilder();
 
-        String outputName = "tb_user";
+        String outputName = "t_user";
         if (!StringUtils.isBlank(tablePrefix) && outputName.startsWith(tablePrefix)) {
             outputName = outputName.substring(tablePrefix.length());
         }
