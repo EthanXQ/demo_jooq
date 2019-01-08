@@ -37,15 +37,16 @@ public class UserServiceImpl implements UserService {
     com.ethan.generator.tables.User u = USER;
 
     @Override
-    public void insertUser(User user) {
+    public Long insertUser(User user) {
 
-        create.insertInto(u).columns(u.NAME, u.PHONE, u.CREATE_AT).
-                values(user.getName(), user.getPhone(), user.getCreateAt()).execute();
+        UserRecord record = create.insertInto(u).columns(u.NAME, u.PHONE, u.CREATE_AT).
+                values(user.getName(), user.getPhone(), user.getCreateAt()).returning(u.ID).fetchOne();
+        return record.getId();
     }
 
     @Override
     public void storeUser(UserParam param) {
-        UserRecord record = create.newRecord(USER,param);
+        UserRecord record = create.newRecord(USER, param);
         record.insert();
     }
 

@@ -28,16 +28,15 @@ public class DemoJooqApplicationTests {
     @Test
     public void addUser(){
 
-//        User user = new User();
-//        user.setId((long)7);
-//        user.setName("下棋3");
-//        user.setPhone("12345678901");
-//        user.setCreateAt(LocalDateTime.now());
-//        userService.insertUser(user);
-        UserParam user = new UserParam();
-        user.setName("下棋vvvvv");
+        User user = new User();
+        user.setName("bababbabab");
         user.setPhone("12345678901");
-        userService.storeUser(user);
+        user.setCreateAt(LocalDateTime.now());
+        System.out.println("userId:"+userService.insertUser(user));
+//        UserParam user = new UserParam();
+//        user.setName("下棋vvvvv");
+//        user.setPhone("12345678901");
+//        userService.storeUser(user);
 
     }
 

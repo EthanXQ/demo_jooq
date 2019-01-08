@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface UserService {
 
-    void insertUser(User user);
+    Long insertUser(User user);
 
     void storeUser(UserParam user);
 
